@@ -6,6 +6,7 @@
 		<classes>
 			<class name="com.testvagrant.cleartrip.tests.SignInTest" />
 			<class name="com.testvagrant.cleartrip.tests.FlightBookingTest" />
+			<class name="com.testvagrant.cleartrip.tests.HotelBookingTest" />
 		</classes>
 
 	</test> <!-- Default test -->

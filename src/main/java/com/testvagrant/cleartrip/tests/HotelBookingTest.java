@@ -1,42 +1,40 @@
 package com.testvagrant.cleartrip.tests;
 
-import com.sun.javafx.PlatformUtil;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.ui.Select;
+import com.testvagrant.cleartrip.pages.HotelsPage;
+import com.testvagrant.cleartrip.utility.CommonUtil;
+
+import org.openqa.selenium.By;
+import org.testng.Assert;
 import org.testng.annotations.Test;
 
 public class HotelBookingTest extends BaseTest {
 
-	WebDriver driver = new ChromeDriver();
-
-	@FindBy(linkText = "Hotels")
-	private WebElement hotelLink;
-
-	@FindBy(id = "Tags")
-	private WebElement localityTextBox;
-
-	@FindBy(id = "SearchHotelsButton")
-	private WebElement searchButton;
-
-	@FindBy(id = "travellersOnhome")
-	private WebElement travellerSelection;
-
 	@Test
 	public void shouldBeAbleToSearchForHotels() {
-		setDriverPath();
 
-		driver.get("https://www.cleartrip.com/");
-		hotelLink.click();
+		// click on hotel link
+		HotelsPage hotelsPageObj = homePage.clickHotelsLink();
 
-		localityTextBox.sendKeys("Indiranagar, Bangalore");
+		// enter locality
+		hotelsPageObj.enterLocalityTextBox("Indiranagar, Bangalore");
 
-		new Select(travellerSelection).selectByVisibleText("1 room, 2 adults");
-		searchButton.click();
+		// wait for the auto complete options to appear for the origin
+		CommonUtil.waitFor(2000);
 
-		
+		// select locality from auto suggestion
+		hotelsPageObj.selectLocality();
+
+		// select Travelers option from drop-down
+		hotelsPageObj.selectTravellers("1 room, 2 adults");
+
+		// click on hotel search button
+		hotelsPageObj.clickSearchHotelsButton();
+
+		// wait for page to load
+		CommonUtil.waitFor(5000);
+
+		Assert.assertTrue(
+				CommonUtil.isElementPresent(By.xpath("//p/small[text()='Showing hotels around']"), this.driver));
 
 	}
 
