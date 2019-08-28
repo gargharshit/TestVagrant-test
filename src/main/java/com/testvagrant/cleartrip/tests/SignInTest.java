@@ -1,12 +1,7 @@
 package com.testvagrant.cleartrip.tests;
 
-import com.sun.javafx.PlatformUtil;
 import com.testvagrant.cleartrip.pages.SignInPage;
-import com.testvagrant.cleartrip.utility.CommonUtil;
-
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 

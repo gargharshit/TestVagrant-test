@@ -1,59 +1,52 @@
 package com.testvagrant.cleartrip.tests;
 
-import com.sun.javafx.PlatformUtil;
+import com.testvagrant.cleartrip.pages.FlightsPage;
 import com.testvagrant.cleartrip.utility.CommonUtil;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.NoSuchElementException;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
 import org.testng.annotations.Test;
-
-import java.util.List;
 
 public class FlightBookingTest extends BaseTest {
 
 	@Test
 	public void testThatResultsAppearForAOneWayJourney() {
 
-		setDriverPath();
-		driver = new ChromeDriver();
-		driver.get("https://www.cleartrip.com/");
-		CommonUtil.waitFor(2000);
-		driver.findElement(By.id("OneWay")).click();
+		// click in flight link
+		FlightsPage flightPageObj = homePage.clickFlightsLink();
 
-		driver.findElement(By.id("FromTag")).clear();
-		driver.findElement(By.id("FromTag")).sendKeys("Bangalore");
+		// select oneWay option
+		flightPageObj.clickOneWayButton();
+
+		// enter origin city
+		flightPageObj.enterOriginCity("Bangalore");
 
 		// wait for the auto complete options to appear for the origin
-
 		CommonUtil.waitFor(2000);
-		List<WebElement> originOptions = driver.findElement(By.id("ui-id-1")).findElements(By.tagName("li"));
-		originOptions.get(0).click();
 
-		driver.findElement(By.id("toTag")).clear();
-		driver.findElement(By.id("toTag")).sendKeys("Delhi");
+		// select origin city from auto suggestion
+		flightPageObj.selectOriginCity();
+
+		// enter destination city
+		flightPageObj.enterDestinationCity("Delhi");
 
 		// wait for the auto complete options to appear for the destination
-
 		CommonUtil.waitFor(2000);
-		// select the first item from the destination auto complete list
-		List<WebElement> destinationOptions = driver.findElement(By.id("ui-id-2")).findElements(By.tagName("li"));
-		destinationOptions.get(0).click();
 
-		driver.findElement(By.xpath("//*[@id='ui-datepicker-div']/div[1]/table/tbody/tr[3]/td[7]/a")).click();
+		// select the first item from the destination auto complete list
+		flightPageObj.selectDestinationCity();
+
+		// select date
+		flightPageObj.selectDate();
 
 		// all fields filled in. Now click on search
-		driver.findElement(By.id("SearchBtn")).click();
+		flightPageObj.clickSearchFlightButton();
 
 		CommonUtil.waitFor(5000);
+
 		// verify that result appears for the provided journey search
 		Assert.assertTrue(CommonUtil.isElementPresent(By.className("searchSummary"), this.driver));
 
-	
 	}
 
 }
