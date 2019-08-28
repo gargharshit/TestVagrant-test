@@ -16,7 +16,7 @@ import java.util.List;
 
 public class FlightBookingTest extends BaseTest {
 
-		@Test
+	@Test
 	public void testThatResultsAppearForAOneWayJourney() {
 
 		setDriverPath();
@@ -51,12 +51,9 @@ public class FlightBookingTest extends BaseTest {
 
 		CommonUtil.waitFor(5000);
 		// verify that result appears for the provided journey search
-		Assert.assertTrue(CommonUtil.isElementPresent(By.className("searchSummary"),this.driver));
-
-		// close the browser
-		driver.quit();
-	}
+		Assert.assertTrue(CommonUtil.isElementPresent(By.className("searchSummary"), this.driver));
 
 	
+	}
 
 }

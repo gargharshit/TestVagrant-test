@@ -36,7 +36,7 @@ public class HotelBookingTest extends BaseTest {
 		new Select(travellerSelection).selectByVisibleText("1 room, 2 adults");
 		searchButton.click();
 
-		driver.quit();
+		
 
 	}
 
