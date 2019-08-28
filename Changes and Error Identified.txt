@@ -1,0 +1,31 @@
+
+Important note - My system was 32 bit so I have updated the chromedriver.exe file.
+
+--- Error Identified ---
+
+1) Corrected the following error - Chrome driver object was created before setting chromedriver.exe path. 
+2) Getting following exception - org.openqa.selenium.WebDriverException: unknown error: call function result missing 'value'
+	Correction - Added the compatible(my system is 32 bit) chromedriver.exe file.
+
+Error in SignInTest class -
+	1) added a step for switching to frame for sign-in window
+
+Error in FlightsBookingTest class -
+	1) Webelement 'ToTag' was wrongly identified as "toTag"
+	2) Datepicker - currently I have taken current date. We can also add few more validation - 
+			a) verify that date must be equal or greater than current date
+			b) we can also select date which user provides by first verifying the year then month and then select the user date.
+
+Error in HotelBookingTest class -
+	1) Initialize pagefactory
+	2) Add the step for auto suggestions and select the first option
+	3) Add assert to check that user has reached search result page
+
+ 
+--- Design Corrections (POM) ---
+
+1) Created a new package 'com.testvagrant.cleartrip.tests' and put all the 3 test classes in it.
+2) Created a new package 'com.testvagrant.cleartrip.pages' and added all the required page classes.
+3) Created a BaseTest class in 'com.testvagrant.cleartrip.tests' extend this class in all the 3 test classes.
+4) Created @BeforeMethod and @AfterMethod in the base class.
+5) Created a utility package 'com.testvagrant.cleartrip.utility' and created a class 'CommonUtil' with 4 methods 'waitFor' , 'isElementPresent' , 'setDriverPath' and 'getCurrentDay'
