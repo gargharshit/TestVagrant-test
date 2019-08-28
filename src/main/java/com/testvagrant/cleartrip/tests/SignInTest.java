@@ -1,6 +1,7 @@
 package com.testvagrant.cleartrip.tests;
 
 import com.sun.javafx.PlatformUtil;
+import com.testvagrant.cleartrip.pages.SignInPage;
 import com.testvagrant.cleartrip.utility.CommonUtil;
 
 import org.openqa.selenium.By;
@@ -16,19 +17,18 @@ public class SignInTest extends BaseTest {
 	@Test
 	public void shouldThrowAnErrorIfSignInDetailsAreMissing() {
 
-		setDriverPath();
+		// clicking on Trip link in home page
+		homePage.clickYourTrips();
 
-		driver = new ChromeDriver();
-		driver.get("https://www.cleartrip.com/");
-		CommonUtil.waitFor(2000);
+		// clicking on Sign-In link which will open the sign-in frame
+		SignInPage signInPageObj = homePage.clickSignIn();
 
-		driver.findElement(By.linkText("Your trips")).click();
-		driver.findElement(By.id("SignIn")).click();
+		// clicking on sign-in button
+		signInPageObj.clickSignInButton();
 
-		driver.switchTo().frame("modal_window");
-		driver.findElement(By.id("signInButton")).click();
+		// storig the error text
+		String errors1 = signInPageObj.getError1Text();
 
-		String errors1 = driver.findElement(By.id("errors1")).getText();
 		Assert.assertTrue(errors1.contains("There were errors in your submission"));
 
 	}
