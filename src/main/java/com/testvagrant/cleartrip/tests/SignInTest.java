@@ -1,44 +1,36 @@
 package com.testvagrant.cleartrip.tests;
+
 import com.sun.javafx.PlatformUtil;
+import com.testvagrant.cleartrip.utility.CommonUtil;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-public class SignInTest extends BaseTest{
+public class SignInTest extends BaseTest {
 
-    WebDriver driver ;
+	WebDriver driver;
 
-    @Test
-    public void shouldThrowAnErrorIfSignInDetailsAreMissing() {
+	@Test
+	public void shouldThrowAnErrorIfSignInDetailsAreMissing() {
 
-        setDriverPath();
+		setDriverPath();
 
-        driver = new ChromeDriver();
-        driver.get("https://www.cleartrip.com/");
-        waitFor(2000);
+		driver = new ChromeDriver();
+		driver.get("https://www.cleartrip.com/");
+		CommonUtil.waitFor(2000);
 
-        driver.findElement(By.linkText("Your trips")).click();
-        driver.findElement(By.id("SignIn")).click();
+		driver.findElement(By.linkText("Your trips")).click();
+		driver.findElement(By.id("SignIn")).click();
 
-        driver.switchTo().frame("modal_window");
-        driver.findElement(By.id("signInButton")).click();
+		driver.switchTo().frame("modal_window");
+		driver.findElement(By.id("signInButton")).click();
 
-        String errors1 = driver.findElement(By.id("errors1")).getText();
-        Assert.assertTrue(errors1.contains("There were errors in your submission"));
-        driver.quit();
-    }
+		String errors1 = driver.findElement(By.id("errors1")).getText();
+		Assert.assertTrue(errors1.contains("There were errors in your submission"));
 
-    private void waitFor(int durationInMilliSeconds) {
-        try {
-            Thread.sleep(durationInMilliSeconds);
-        } catch (InterruptedException e) {
-            e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
-        }
-    }
-
-   
-
+	}
 
 }
