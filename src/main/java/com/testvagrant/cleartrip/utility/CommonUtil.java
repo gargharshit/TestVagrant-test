@@ -1,5 +1,8 @@
 package com.testvagrant.cleartrip.utility;
 
+import java.util.Calendar;
+import java.util.TimeZone;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
@@ -36,4 +39,18 @@ public class CommonUtil {
 			System.setProperty("webdriver.chrome.driver", "chromedriver_linux");
 		}
 	}
+	
+	public static String getCurrentDay (){
+        
+		//Create a Calendar Object
+        Calendar calendar = Calendar.getInstance(TimeZone.getDefault());
+ 
+        //Get Current Day as a number
+        int todayInt = calendar.get(Calendar.DAY_OF_MONTH);
+         
+        //Integer to String Conversion
+        String todayStr = Integer.toString(todayInt);
+         
+        return todayStr;
+    }
 }

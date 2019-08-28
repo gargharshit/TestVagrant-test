@@ -25,8 +25,8 @@ public class FlightsPage {
 	@FindBy(xpath = "//ul[@id='ui-id-2']/li")
 	private List<WebElement> destinationOptions;
 
-	@FindBy(xpath = "//*[@id='ui-datepicker-div']/div[1]/table/tbody/tr[5]/td[4]/a")
-	private WebElement date;
+	@FindBy(xpath = "//div[@id='ui-datepicker-div']/div[1]/table/tbody//td")
+	private List<WebElement> allDatesOfMonth;
 
 	@FindBy(id = "SearchBtn")
 	private WebElement searchFlightButton;
@@ -35,41 +35,46 @@ public class FlightsPage {
 		this.driver = driver;
 	}
 
-	//to click on OneWay radio button if already not selected
+	// to click on OneWay radio button if already not selected
 	public void clickOneWayButton() {
 		if (!(this.oneWay.isSelected())) {
 			this.oneWay.click();
 		}
 	}
 
-	//to enter origin city
+	// to enter origin city
 	public void enterOriginCity(String originCity) {
 		this.originCity.clear();
 		this.originCity.sendKeys(originCity);
 	}
 
-	//to select the suggested origin city based on input entered 
+	// to select the suggested origin city based on input entered
 	public void selectOriginCity() {
 		this.originOptions.get(0).click();
 	}
 
-	//to enter destination city
+	// to enter destination city
 	public void enterDestinationCity(String destinationCity) {
 		this.destinationCity.clear();
 		this.destinationCity.sendKeys(destinationCity);
 	}
 
-	//to select the suggested destination city based on input entered 
+	// to select the suggested destination city based on input entered
 	public void selectDestinationCity() {
 		this.destinationOptions.get(0).click();
 	}
 
-	//to select date
-	public void selectDate() {
-		this.date.click();
+	// to select date
+	public void selectDate(String date) {
+		for (WebElement dateCell : allDatesOfMonth) {
+			if (dateCell.getText().equals(date)) {
+				dateCell.click();
+				break;
+			}
+		}
 	}
 
-	//to click on search flight button
+	// to click on search flight button
 	public void clickSearchFlightButton() {
 		this.searchFlightButton.click();
 	}

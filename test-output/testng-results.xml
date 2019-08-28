@@ -1,49 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="0" total="3" passed="3">
+<testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="157085" started-at="2019-08-28T21:33:20Z" finished-at="2019-08-28T21:35:57Z">
+  <suite name="Default suite" duration-ms="62894" started-at="2019-08-29T22:36:14Z" finished-at="2019-08-29T22:37:17Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="157085" started-at="2019-08-28T21:33:20Z" finished-at="2019-08-28T21:35:57Z">
-      <class name="com.testvagrant.cleartrip.tests.HotelBookingTest">
-        <test-method status="PASS" signature="beforeMethod()[pri:0, instance:com.testvagrant.cleartrip.tests.HotelBookingTest@1aeed2f]" name="beforeMethod" is-config="true" duration-ms="13462" started-at="2019-08-29T03:05:16Z" finished-at="2019-08-29T03:05:29Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- beforeMethod -->
-        <test-method status="PASS" signature="shouldBeAbleToSearchForHotels()[pri:0, instance:com.testvagrant.cleartrip.tests.HotelBookingTest@1aeed2f]" name="shouldBeAbleToSearchForHotels" duration-ms="26453" started-at="2019-08-29T03:05:29Z" finished-at="2019-08-29T03:05:56Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- shouldBeAbleToSearchForHotels -->
-        <test-method status="PASS" signature="afterMethod()[pri:0, instance:com.testvagrant.cleartrip.tests.HotelBookingTest@1aeed2f]" name="afterMethod" is-config="true" duration-ms="1245" started-at="2019-08-29T03:05:56Z" finished-at="2019-08-29T03:05:57Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- afterMethod -->
-      </class> <!-- com.testvagrant.cleartrip.tests.HotelBookingTest -->
-      <class name="com.testvagrant.cleartrip.tests.SignInTest">
-        <test-method status="PASS" signature="beforeMethod()[pri:0, instance:com.testvagrant.cleartrip.tests.SignInTest@17e2f02]" name="beforeMethod" is-config="true" duration-ms="57291" started-at="2019-08-29T03:03:20Z" finished-at="2019-08-29T03:04:17Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- beforeMethod -->
-        <test-method status="PASS" signature="shouldThrowAnErrorIfSignInDetailsAreMissing()[pri:0, instance:com.testvagrant.cleartrip.tests.SignInTest@17e2f02]" name="shouldThrowAnErrorIfSignInDetailsAreMissing" duration-ms="7125" started-at="2019-08-29T03:04:17Z" finished-at="2019-08-29T03:04:24Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- shouldThrowAnErrorIfSignInDetailsAreMissing -->
-        <test-method status="PASS" signature="afterMethod()[pri:0, instance:com.testvagrant.cleartrip.tests.SignInTest@17e2f02]" name="afterMethod" is-config="true" duration-ms="1040" started-at="2019-08-29T03:04:24Z" finished-at="2019-08-29T03:04:25Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- afterMethod -->
-      </class> <!-- com.testvagrant.cleartrip.tests.SignInTest -->
+    <test name="Default test" duration-ms="62894" started-at="2019-08-29T22:36:14Z" finished-at="2019-08-29T22:37:17Z">
       <class name="com.testvagrant.cleartrip.tests.FlightBookingTest">
-        <test-method status="PASS" signature="beforeMethod()[pri:0, instance:com.testvagrant.cleartrip.tests.FlightBookingTest@7fa833]" name="beforeMethod" is-config="true" duration-ms="15579" started-at="2019-08-29T03:04:25Z" finished-at="2019-08-29T03:04:41Z">
+        <test-method status="PASS" signature="beforeMethod()[pri:0, instance:com.testvagrant.cleartrip.tests.FlightBookingTest@23a2f9]" name="beforeMethod" is-config="true" duration-ms="23864" started-at="2019-08-30T04:06:15Z" finished-at="2019-08-30T04:06:38Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeMethod -->
-        <test-method status="PASS" signature="testThatResultsAppearForAOneWayJourney()[pri:0, instance:com.testvagrant.cleartrip.tests.FlightBookingTest@7fa833]" name="testThatResultsAppearForAOneWayJourney" duration-ms="32436" started-at="2019-08-29T03:04:41Z" finished-at="2019-08-29T03:05:13Z">
+        <test-method status="PASS" signature="testThatResultsAppearForAOneWayJourney()[pri:0, instance:com.testvagrant.cleartrip.tests.FlightBookingTest@23a2f9]" name="testThatResultsAppearForAOneWayJourney" duration-ms="37739" started-at="2019-08-30T04:06:38Z" finished-at="2019-08-30T04:07:16Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testThatResultsAppearForAOneWayJourney -->
-        <test-method status="PASS" signature="afterMethod()[pri:0, instance:com.testvagrant.cleartrip.tests.FlightBookingTest@7fa833]" name="afterMethod" is-config="true" duration-ms="2359" started-at="2019-08-29T03:05:13Z" finished-at="2019-08-29T03:05:16Z">
+        <test-method status="PASS" signature="afterMethod()[pri:0, instance:com.testvagrant.cleartrip.tests.FlightBookingTest@23a2f9]" name="afterMethod" is-config="true" duration-ms="1205" started-at="2019-08-30T04:07:16Z" finished-at="2019-08-30T04:07:17Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterMethod -->

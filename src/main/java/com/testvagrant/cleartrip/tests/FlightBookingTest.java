@@ -38,7 +38,7 @@ public class FlightBookingTest extends BaseTest {
 		flightPageObj.selectDestinationCity();
 
 		// select date
-		flightPageObj.selectDate();
+		flightPageObj.selectDate(CommonUtil.getCurrentDay());
 
 		// all fields filled in. Now click on search
 		flightPageObj.clickSearchFlightButton();
