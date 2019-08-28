@@ -1,10 +1,10 @@
 package com.testvagrant.cleartrip.utility;
 
-
-
 import org.openqa.selenium.By;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
+
+import com.sun.javafx.PlatformUtil;
 
 public class CommonUtil {
 
@@ -16,12 +16,24 @@ public class CommonUtil {
 		}
 	}
 
-	public static boolean isElementPresent(By by , WebDriver driver) {
+	public static boolean isElementPresent(By by, WebDriver driver) {
 		try {
 			driver.findElement(by);
 			return true;
 		} catch (NoSuchElementException e) {
 			return false;
+		}
+	}
+
+	public static void setDriverPath() {
+		if (PlatformUtil.isMac()) {
+			System.setProperty("webdriver.chrome.driver", "chromedriver");
+		}
+		if (PlatformUtil.isWindows()) {
+			System.setProperty("webdriver.chrome.driver", "chromedriver.exe");
+		}
+		if (PlatformUtil.isLinux()) {
+			System.setProperty("webdriver.chrome.driver", "chromedriver_linux");
 		}
 	}
 }

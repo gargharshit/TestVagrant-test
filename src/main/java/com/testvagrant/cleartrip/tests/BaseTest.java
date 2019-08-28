@@ -1,7 +1,7 @@
 package com.testvagrant.cleartrip.tests;
 
-import com.sun.javafx.PlatformUtil;
 import com.testvagrant.cleartrip.pages.HomePage;
+import com.testvagrant.cleartrip.utility.CommonUtil;
 
 import java.util.concurrent.TimeUnit;
 import org.openqa.selenium.WebDriver;
@@ -19,7 +19,7 @@ public class BaseTest {
 	public void beforeMethod() {
 
 		// setting chrome driver path
-		setDriverPath();
+		CommonUtil.setDriverPath();
 
 		// initializing the driver to ChromeDriver
 		driver = new ChromeDriver();
@@ -32,8 +32,8 @@ public class BaseTest {
 
 		// for implicit wait
 		driver.manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS);
-		
-		//creating object for home page class
+
+		// creating object for home page class
 		this.homePage = PageFactory.initElements(driver, HomePage.class);
 
 	}
@@ -42,18 +42,6 @@ public class BaseTest {
 	public void afterMethod() {
 		// close the browser
 		driver.quit();
-	}
-
-	public void setDriverPath() {
-		if (PlatformUtil.isMac()) {
-			System.setProperty("webdriver.chrome.driver", "chromedriver");
-		}
-		if (PlatformUtil.isWindows()) {
-			System.setProperty("webdriver.chrome.driver", "chromedriver.exe");
-		}
-		if (PlatformUtil.isLinux()) {
-			System.setProperty("webdriver.chrome.driver", "chromedriver_linux");
-		}
 	}
 
 }

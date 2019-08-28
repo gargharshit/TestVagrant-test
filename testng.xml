@@ -3,10 +3,10 @@
 <suite guice-stage="DEVELOPMENT" name="Default suite">
 	<test thread-count="5" verbose="2" name="Default test">
 
-		<classes>
+		<classes>		
 			<class name="com.testvagrant.cleartrip.tests.SignInTest" />
 			<class name="com.testvagrant.cleartrip.tests.FlightBookingTest" />
-			<class name="com.testvagrant.cleartrip.tests.HotelBookingTest" />
+			<class name="com.testvagrant.cleartrip.tests.HotelBookingTest" />			
 		</classes>
 
 	</test> <!-- Default test -->

@@ -4,6 +4,7 @@ import com.testvagrant.cleartrip.pages.FlightsPage;
 import com.testvagrant.cleartrip.utility.CommonUtil;
 
 import org.openqa.selenium.By;
+
 import org.testng.Assert;
 import org.testng.annotations.Test;
 

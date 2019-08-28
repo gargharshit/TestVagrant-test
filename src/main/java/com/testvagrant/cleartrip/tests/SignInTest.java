@@ -1,13 +1,11 @@
 package com.testvagrant.cleartrip.tests;
 
 import com.testvagrant.cleartrip.pages.SignInPage;
-import org.openqa.selenium.WebDriver;
+
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
 public class SignInTest extends BaseTest {
-
-	WebDriver driver;
 
 	@Test
 	public void shouldThrowAnErrorIfSignInDetailsAreMissing() {
